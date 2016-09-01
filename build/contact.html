@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>EliaGedz - Photography[Contacts]</title><script src="js/jquery.min.js"></script><link rel="icon" type="image/png" href="favicon.png"><script src="js/bootstrap.min.js" charset="utf-8"></script><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="sass/main.css"><link rel="stylesheet" href="all-css/main.min.css"><link rel="stylesheet" href="all-css/remodal.css"><link rel="stylesheet" href="all-css/remodal-default-theme.css"><script src="js/remodal.min.js" charset="utf-8"></script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"></head><body><div class="leftbar contact-leftbar"><div class="text-center"><a href="index.html"><i class="fa fa-home fa-4x" aria-hidden="true"></i></a></div></div><section class="contact"><p style="position: fixed;top: 45%;left: -59px; -webkit-transform: rotate(90deg); transform: rotate(90deg)">© 2016 eliagedz.com</p><div class="container"><div class="row"><div class="col-md-5"></div><div class="col-md-4 text-center fa-black"><div class="img-contact"><img src="img/Elia.jpg" alt="photograph-person" class="img-circle"></div><div class="contact_h1"><h1>CONTACTS</h1><h2>Elia Gedz (Илья Гедз)</h2><a class="phone" href="tel:+380637362356">+380637362356</a></div><ul class="list-inline"><li class="instagram"><a href="https://www.instagram.com/eliagedz/" target="_blank"><img src="img/instagram.png" alt="instagram" height="50px"></a></li><li class="facebook"><a href="https://www.facebook.com/eliagedz" target="_blank"><img src="img/facebook.png" alt="facebook" height="50px"></a></li><li class="vk"><a href="https://vk.com/elia_inside" target="_blank"><img src="img/vk.png" alt="vkontakte" height="50px"></a></li></ul></div></div><div class="row button-bottom"><div class="col-md-12"><a class="btn btn-custom" href="#modal">Mail ME</a></div></div></div><div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc"><div class="remodalBorder"><a data-remodal-action="close" class="remodal-closes" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></a><form><input type="hidden" name="project_name" value="EliaGedz - WEB-SITE"> <input type="hidden" name="admin_email" value="elia.gedz@gmail.com"> <input type="hidden" name="form_subject" value="Feedback from contacts"> <input type="name" name="name" class="form-control" placeholder="Your Name" required=""> <input type="email" name="email" class="form-control" placeholder="Your Email" required=""><textarea class="form-control" name="text" rows="3" placeholder="Your text" required=""></textarea><button class="btn btn-custom" href="#modal">SEND</button></form></div></div></section><script>$(document).ready(function() {
+  //E-mail Ajax Send
+  $("form").submit(function() { //Change
+    var th = $(this);
+    $.ajax({
+      type: "POST",
+      url: "mail.php", //Change
+      data: th.serialize()
+    }).done(function() {
+      alert("Thank you!");
+      setTimeout(function() {
+        // Done Functions
+        th.trigger("reset");
+      }, 1000);
+    });
+    return false;
+  });
+});</script></body></html>
